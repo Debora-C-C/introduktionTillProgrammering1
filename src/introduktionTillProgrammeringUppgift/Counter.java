@@ -1,14 +1,14 @@
 package introduktionTillProgrammeringUppgift;
 
 public class Counter {
-
-    private String textInput;
     private int numChars;
     private int row;
     public Counter(String textText, int totLines, int chars){
-        textInput = textText;
         numChars = chars;
         row = totLines;
+    }
+    public Counter() {
+
     }
     public void calcChars(String input) {
         numChars = numChars + input.length();
@@ -23,4 +23,5 @@ public class Counter {
 
         return numChars;
     }
+
 }

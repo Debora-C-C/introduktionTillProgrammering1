@@ -2,7 +2,7 @@ package introduktionTillProgrammeringUppgift;
 
 import java.util.Scanner;
 
-public class JavaUppgift {
+public class JavaAssignment {
 
     public static void main(String[] args) {
 

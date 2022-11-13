@@ -9,19 +9,30 @@ public class MyTest {
     public void testCalcChars() {
         //Arrange
         Counter cn = new Counter();
-        String String = "";
-        cn.calcChars(String);
+        cn.calcChars("hello");
 
-        assertEquals(String, String);
-
-    }
-    @Test
-    public void test_getRowCount() {
+        assertEquals(5, cn.getNumCharsCount());
 
     }
     @Test
-    public void test_getNumCharsCount() {
+    public void testCalcRows() {
+        Counter cn = new Counter();
+        cn.calcRows();
 
+        assertEquals(1, cn.getRowCount());
+    }
+    @Test
+    public void testCalcWords() {
+        Counter cn = new Counter();
+        cn.calcWords("hej kompis");
+
+        assertEquals(2, cn.getNumWords());
     }
 
+    @Test
+    public void testCheckStop(){
+        Counter cn = new Counter();
+        cn.calcCheckStop("stop");
+        assertEquals(true, cn.getCheckStop());
+    }
 }

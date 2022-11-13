@@ -13,20 +13,33 @@ public class JavaAssignment {
 
         int numChars = 0;
         int row = 0;
+        int totNumWords = 0;
+        String absolutLongest = " ";
+        boolean stopInput = false;
 
-        Counter calc = new Counter(textInput, numChars, row);
+        Counter calc = new Counter(numChars, row, totNumWords, absolutLongest, stopInput);
+        calc.calcCheckStop(textInput);
+        stopInput = calc.getCheckStop();
 
-        while (!textInput.equals("stop")) {
+        while (!stopInput) {
             calc.calcChars(textInput);
             numChars = calc.getNumCharsCount();
+            calc.calcRows();
             row = calc.getRowCount();
-
+            calc.calcWords(textInput);
+            totNumWords = calc.getNumWords();
+            calc.calcLongestWord(textInput);
+            absolutLongest = calc.getAbsolutLongestWord();
 
             textInput = scan.nextLine();
+            calc.calcCheckStop(textInput);
+            stopInput = calc.getCheckStop();
         }
         System.out.println("Hello! This is the result you get:");
-        System.out.println("You wrote a total of: " + numChars + " chars. And");
-        System.out.println("a total of: " + row +" rows. Thank you!");
+        System.out.println("You wrote a total of: " + numChars + " chars.");
+        System.out.println("A total of: " + row +" rows.");
+        System.out.println("A total of: "+ totNumWords + " words");
+        System.out.println("And the longest word is: "+ absolutLongest);
     }
 
 }
